@@ -1,18 +1,41 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import Seat from '../components/Seat';
 import BUS_LAYOUT from '../data.json';
+import { SeatContext } from '../context/seatContext';
 function SeatLayout() {
 	const [layouts, setLayouts] = useState(BUS_LAYOUT);
+	const { passengers, selectedSeat, setSelectedSeat } = useContext(SeatContext);
 
 	const onChange = useCallback((layout, row, col, v) => {
 		const prev = layouts;
 		let curr = prev[layout].layout[row][col];
 		let isSelected = curr.isSelected || false;
-		isSelected ? (curr.isSelected = false) : (curr.isSelected = true);
+		if (isSelected) {
+			curr.isSelected = false;
+			setSelectedSeat((prev) => {
+				prev.delete(curr.id);
+				return new Set(prev);
+			});
+		} else {
+			curr.isSelected = true;
+			setSelectedSeat((prev) => new Set(prev.add(curr.id)));
+		}
 		setLayouts([...prev]);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
-	// return <pre>{JSON.stringify(layouts, null, 2)}</pre>;
+
+	const checkOut = () => {
+		if (passengers.length !== selectedSeat.size) return;
+		console.log('Passengers', passengers, 'Seats', selectedSeat);
+		const tickets = [];
+		let seats = Array.from(selectedSeat);
+		for (let passenger of passengers) {
+			passenger.seat = seats.pop();
+			tickets.push(passenger);
+		}
+		console.log('===>', tickets);
+		alert(JSON.stringify(tickets));
+	};
 	return (
 		<div className="seat-selection-container">
 			{layouts.map((layout, L) => (
@@ -39,6 +62,19 @@ function SeatLayout() {
 					))}
 				</div>
 			))}
+			{selectedSeat.size > 0 && (
+				<button
+					onClick={checkOut}
+					type="button"
+					disabled={selectedSeat.size > passengers.length}
+				>
+					{selectedSeat.size > passengers.length
+						? `Bummer: ${
+								selectedSeat.size - passengers.length
+						  } extra seat selected`
+						: 'Pay'}
+				</button>
+			)}
 		</div>
 	);
 }

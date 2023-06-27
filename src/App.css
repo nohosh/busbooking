@@ -3,7 +3,9 @@
 }
 
 /* SEAT CONTAINER */
-.seat-selection-container {
+.seat-selection-container,
+.passenger-container {
+	text-align: center;
 	margin-top: 20px;
 }
 .layout {
@@ -61,7 +63,3 @@
 /* SEAT CONTAINER END */
 
 /* PASSENGER CONTAINER */
-.passenger-container {
-	margin-top: 20px;
-	text-align: center;
-}

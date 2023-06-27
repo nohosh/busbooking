@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { SeatContext } from '../context/seatContext';
 
 function Passenger() {
-	const [passengers, setPassengers] = useState([]);
+	const { passengers, setPassengers } = useContext(SeatContext);
 
 	const removePassenger = (e, i) => {
 		e.preventDefault();
