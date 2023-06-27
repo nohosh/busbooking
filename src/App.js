@@ -3,6 +3,7 @@ import './App.css';
 import Passenger from './views/Passenger';
 import SeatLayout from './views/SeatLayout';
 import { SeatContext } from './context/seatContext';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
 	const [selectedSeat, setSelectedSeat] = useState(new Set());
@@ -14,10 +15,14 @@ function App() {
 	);
 
 	return (
-		<SeatContext.Provider value={seatValue}>
-			<SeatLayout />
-			<Passenger />
-		</SeatContext.Provider>
+		<BrowserRouter>
+			<SeatContext.Provider value={seatValue}>
+				<Routes>
+					<Route path="/" exact element={<Passenger />} />
+					<Route path="/selectseat" element={<SeatLayout />} />
+				</Routes>
+			</SeatContext.Provider>
+		</BrowserRouter>
 	);
 }
 

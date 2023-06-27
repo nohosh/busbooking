@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { SEAT, SeatStatus } from '../Enum';
 
 const Seat = memo(
-	({ isSelected, type, status, layout, row, col, onChange }) => {
+	({ isSelected, type, status, layout, row, col, onChange, number }) => {
 		return (
 			<div
 				onClick={() => onChange(layout, row, col)}
@@ -13,7 +13,9 @@ const Seat = memo(
 						? 'seat seat-r'
 						: `seat seat-v ${isSelected ? 'seat-selected' : ''}`
 				}
-			></div>
+			>
+				<span className="seat-num">{number}</span>
+			</div>
 		);
 	}
 );

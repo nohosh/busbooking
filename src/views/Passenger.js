@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { SeatContext } from '../context/seatContext';
+import { Link } from 'react-router-dom';
 
 function Passenger() {
 	const { passengers, setPassengers } = useContext(SeatContext);
@@ -27,7 +28,7 @@ function Passenger() {
 			<form>
 				{passengers.map((seat, i) => {
 					return (
-						<div>
+						<div key={i}>
 							<input
 								type="text"
 								placeholder="name"
@@ -42,13 +43,27 @@ function Passenger() {
 								name="age"
 								onChange={(e) => handleChange(e, i)}
 							/>
-							<button onClick={(e) => removePassenger(e, i)}>🗑️</button>
+							<button
+								className="btn-delete"
+								onClick={(e) => removePassenger(e, i)}
+							>
+								🗑️
+							</button>
 						</div>
 					);
 				})}
-				<button type="button" onClick={addPassenger}>
-					Click to add passenger
-				</button>
+				<div className="btn-container">
+					<button className="btn-add" type="button" onClick={addPassenger}>
+						Click to add passenger
+					</button>
+					{passengers.length > 0 && (
+						<Link to="/selectseat">
+							<button type="button" className="btn-next">
+								Go to seat selection
+							</button>
+						</Link>
+					)}
+				</div>
 			</form>
 		</div>
 	);
