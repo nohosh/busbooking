@@ -1,0 +1,84 @@
+[
+	{
+		"layoutName": "bottom",
+		"layout": [
+			[
+				{ "type": 1, "status": 0, "id": "1djoiaf", "seatNo": 99 },
+				{ "type": 0, "status": 0, "id": "1djoi0f", "seatNo": null },
+				{ "type": 1, "status": 1, "id": "1djoias", "seatNo": 1 },
+				{ "type": 1, "status": 0, "id": "1djosss", "seatNo": 2 }
+			],
+			[
+				{ "type": 1, "status": 1, "id": "1djdiaf", "seatNo": 3 },
+				{ "type": 0, "status": 0, "id": "1dsoiaf", "seatNo": null },
+				{ "type": 1, "status": 0, "id": "sdjoias", "seatNo": 4 },
+				{ "type": 1, "status": 0, "id": "1d3joas", "seatNo": 5 }
+			],
+			[
+				{ "type": 1, "status": 0, "id": "3djoiaf", "seatNo": 6 },
+				{ "type": 0, "status": 0, "id": "adjoiaf", "seatNo": null },
+				{ "type": 1, "status": 0, "id": "1dsoias", "seatNo": 7 },
+				{ "type": 1, "status": 0, "id": "1wejosas", "seatNo": 8 }
+			],
+			[
+				{ "type": 1, "status": 0, "id": "wewrwdd", "seatNo": 9 },
+				{ "type": 0, "status": 0, "id": "wewrwww", "seatNo": null },
+				{ "type": 1, "status": 0, "id": "adfifds", "seatNo": 10 },
+				{ "type": 1, "status": 0, "id": "2342rwe", "seatNo": 11 }
+			],
+			[
+				{ "type": 1, "status": 0, "id": "1weoiaf", "seatNo": 12 },
+				{ "type": 0, "status": 0, "id": "1djtiaf", "seatNo": null },
+				{ "type": 1, "status": 1, "id": "1dtreias", "seatNo": 13 },
+				{ "type": 1, "status": 0, "id": "1djosas", "seatNo": 14 }
+			],
+			[
+				{ "type": 0, "status": 0, "id": "1dwoiaf", "seatNo": null },
+				{ "type": 1, "status": 0, "id": "1djoiat", "seatNo": 15 },
+				{ "type": 0, "status": 0, "id": "fkdifos", "seatNo": null },
+				{ "type": 0, "status": 0, "id": "fdiiddi", "seatNo": null }
+			]
+		]
+	},
+	{
+		"layoutName": "upper",
+		"layout": [
+			[
+				{ "type": 1, "status": 0, "id": "1ujoiaf", "seatNo": 69 },
+				{ "type": 0, "status": 0, "id": "1sjoiaf", "seatNo": null },
+				{ "type": 1, "status": 1, "id": "1ujoias", "seatNo": 1 },
+				{ "type": 1, "status": 0, "id": "1ujosss", "seatNo": 2 }
+			],
+			[
+				{ "type": 1, "status": 1, "id": "1ujdiaf", "seatNo": 3 },
+				{ "type": 0, "status": 0, "id": "1usoiaf", "seatNo": null },
+				{ "type": 1, "status": 0, "id": "sujoias", "seatNo": 4 },
+				{ "type": 1, "status": 0, "id": "1u3joas", "seatNo": 5 }
+			],
+			[
+				{ "type": 1, "status": 0, "id": "3ujoiaf", "seatNo": 6 },
+				{ "type": 0, "status": 0, "id": "aujoiaf", "seatNo": null },
+				{ "type": 1, "status": 0, "id": "1usoias", "seatNo": 7 },
+				{ "type": 1, "status": 0, "id": "1uejosas", "seatNo": 8 }
+			],
+			[
+				{ "type": 1, "status": 0, "id": "wxwrwdd", "seatNo": 9 },
+				{ "type": 0, "status": 0, "id": "wxwrwww", "seatNo": null },
+				{ "type": 1, "status": 0, "id": "axfifds", "seatNo": 10 },
+				{ "type": 1, "status": 0, "id": "2x42rwe", "seatNo": 11 }
+			],
+			[
+				{ "type": 1, "status": 0, "id": "1xeoiaf", "seatNo": 12 },
+				{ "type": 0, "status": 0, "id": "1xjtiaf", "seatNo": null },
+				{ "type": 1, "status": 1, "id": "1xtreias", "seatNo": 13 },
+				{ "type": 1, "status": 0, "id": "1xjosas", "seatNo": 14 }
+			],
+			[
+				{ "type": 0, "status": 0, "id": "1dwoiaf", "seatNo": null },
+				{ "type": 1, "status": 0, "id": "1djoiat", "seatNo": 15 },
+				{ "type": 0, "status": 0, "id": "fkdifos", "seatNo": null },
+				{ "type": 0, "status": 0, "id": "fdiiddi", "seatNo": null }
+			]
+		]
+	}
+]

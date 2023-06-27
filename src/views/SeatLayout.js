@@ -1,31 +1,14 @@
 import React, { useCallback, useState } from 'react';
 import Seat from '../components/Seat';
-
-const data = [
-	{
-		name: 'bottom',
-		arr: [
-			[{ value: true }, { value: true }, { value: true }],
-			[{ value: true }, { value: true }, { value: true }],
-			[{ value: true }, { value: true }, { value: true }],
-		],
-	},
-	{
-		name: 'top',
-		arr: [
-			[{ value: true }, { value: true }, { value: true }],
-			[{ value: true }, { value: true }, { value: true }],
-			[{ value: true }, { value: true }, { value: true }],
-		],
-	},
-];
+import BUS_LAYOUT from '../data.json';
 function SeatLayout() {
-	const [layouts, setLayouts] = useState(data);
+	const [layouts, setLayouts] = useState(BUS_LAYOUT);
 
 	const onChange = useCallback((layout, row, col, v) => {
 		const prev = layouts;
-		prev[layout].arr[row][col].value = !prev[layout].arr[row][col].value;
-
+		let curr = prev[layout].layout[row][col];
+		let isSelected = curr.isSelected || false;
+		isSelected ? (curr.isSelected = false) : (curr.isSelected = true);
 		setLayouts([...prev]);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
@@ -33,16 +16,22 @@ function SeatLayout() {
 	return (
 		<div className="seat-selection-container">
 			{layouts.map((layout, L) => (
-				<div key={L}>
-					{layout.arr.map((row, R) => (
-						<div key={R}>
+				<div key={L} className="layout">
+					{layout.layout.map((row, R) => (
+						<div className="seat-row" key={R}>
 							{row.map((seat, C) => (
 								<Seat
 									key={seat.id}
 									layout={L}
 									row={R}
 									col={C}
-									isSelected={seat.value}
+									type={seat.type}
+									status={seat.status}
+									isSelected={
+										seat['isSelected'] === undefined
+											? false
+											: seat['isSelected']
+									}
 									onChange={onChange}
 								/>
 							))}
