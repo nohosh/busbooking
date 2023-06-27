@@ -16,6 +16,7 @@ function App() {
 
 	return (
 		<BrowserRouter>
+			<h1 className="heading">Bus bookings.com</h1>
 			<SeatContext.Provider value={seatValue}>
 				<Routes>
 					<Route path="/" exact element={<Passenger />} />

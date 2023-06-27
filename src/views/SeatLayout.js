@@ -7,7 +7,7 @@ function SeatLayout() {
 	const [layouts, setLayouts] = useState(BUS_LAYOUT);
 	const { passengers, selectedSeat, setSelectedSeat } = useContext(SeatContext);
 
-	const onChange = useCallback((layout, row, col, v) => {
+	const onChange = useCallback((layout, row, col) => {
 		const prev = layouts;
 		let curr = prev[layout].layout[row][col];
 		let isSelected = curr.isSelected || false;

@@ -5,7 +5,11 @@ const Seat = memo(
 	({ isSelected, type, status, layout, row, col, onChange, number }) => {
 		return (
 			<div
-				onClick={() => onChange(layout, row, col)}
+				onClick={
+					status === SeatStatus.Reserved
+						? null
+						: () => onChange(layout, row, col)
+				}
 				className={
 					type === SEAT.NoSeat
 						? 'no-seat'
