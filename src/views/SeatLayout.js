@@ -2,6 +2,7 @@ import React, { useCallback, useContext, useState } from 'react';
 import Seat from '../components/Seat';
 import BUS_LAYOUT from '../data.json';
 import { SeatContext } from '../context/seatContext';
+import { Link } from 'react-router-dom';
 function SeatLayout() {
 	const [layouts, setLayouts] = useState(BUS_LAYOUT);
 	const { passengers, selectedSeat, setSelectedSeat } = useContext(SeatContext);
@@ -38,8 +39,15 @@ function SeatLayout() {
 	};
 	return (
 		<div className="seat-selection-container">
+			<Link to="/" className="btn-back">
+				<button type="button">Edit passenger</button>
+			</Link>
 			{layouts.map((layout, L) => (
 				<div key={L} className="layout">
+					<div className="layout-decs">
+						<span>Driver this side.</span>
+						<h1>{layout.layoutName}</h1>
+					</div>
 					{layout.layout.map((row, R) => (
 						<div className="seat-row" key={R}>
 							{row.map((seat, C) => (
@@ -50,6 +58,7 @@ function SeatLayout() {
 									col={C}
 									type={seat.type}
 									status={seat.status}
+									number={seat.seatNo}
 									isSelected={
 										seat['isSelected'] === undefined
 											? false
@@ -64,6 +73,7 @@ function SeatLayout() {
 			))}
 			{selectedSeat.size > 0 && (
 				<button
+					className="btn-pay"
 					onClick={checkOut}
 					type="button"
 					disabled={selectedSeat.size > passengers.length}

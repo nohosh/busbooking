@@ -62,4 +62,80 @@
 }
 /* SEAT CONTAINER END */
 
-/* PASSENGER CONTAINER */
+button {
+	background: none;
+	cursor: pointer;
+	padding: 8px;
+	border: 2px solid rebeccapurple;
+	color: rebeccapurple;
+	border-radius: 4px;
+}
+
+button:disabled,
+button[disabled] {
+	color: gray;
+	border: 2px solid gray;
+	cursor: not-allowed;
+}
+.btn-delete {
+	margin: 10px;
+	padding: 5px;
+	border: 2px solid crimson;
+}
+.btn-delete:hover {
+	background-color: crimson;
+}
+.btn-add {
+	background-color: darkorange;
+	color: white;
+}
+.btn-add:hover {
+	color: darkorange;
+	background: blue;
+	border: 2px solid darkorange;
+}
+.btn-next:hover {
+	background-color: darkgreen;
+	color: white;
+	left: 20px;
+}
+
+.btn-container {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin-top: 30px;
+}
+
+.btn-back {
+	position: absolute;
+	left: 20px;
+	top: 23px;
+}
+input {
+	border: none;
+	border-bottom: 1px solid black;
+	margin: 8px;
+	padding: 8px;
+}
+input:focus {
+	outline: none;
+}
+
+.layout-decs {
+	font-size: 13px;
+}
+
+.layout-decs h1 {
+	margin-top: 0px;
+}
+.layout-decs span {
+	font-size: 8px;
+}
+.seat-num {
+	font-size: 8px;
+	position: absolute;
+	left: -21%;
+	bottom: -5%;
+	color: gray;
+}
