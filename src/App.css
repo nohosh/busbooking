@@ -2,6 +2,7 @@
 	text-align: center;
 }
 
+/* SEAT CONTAINER */
 .seat-selection-container {
 	margin-top: 20px;
 }
@@ -41,7 +42,6 @@
 	border: 1px solid black;
 	transform: translateY(-50%);
 }
-
 .seat-r {
 	background-color: red;
 	cursor: not-allowed;
@@ -57,4 +57,11 @@
 .seat-selected {
 	color: white;
 	background-color: green;
+}
+/* SEAT CONTAINER END */
+
+/* PASSENGER CONTAINER */
+.passenger-container {
+	margin-top: 20px;
+	text-align: center;
 }
